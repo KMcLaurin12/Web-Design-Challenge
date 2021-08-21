@@ -1,37 +1,109 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en-us">
 
-You can use the [editor on GitHub](https://github.com/KMcLaurin12/Web-Design-Challenge/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="UTF-8">
+    <!-- bootstrap's responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <title>Latitude: A Weather Analysis Dashboard with Attitude</title>
 
-### Markdown
+    <!-- bootstrap css links and script -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-```markdown
-Syntax highlighted code block
+    <link rel="stylesheet" href="styles.css">
 
-# Header 1
-## Header 2
-### Header 3
+</head>
 
-- Bulleted
-- List
+<body class="bg-light">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0">
 
-1. Numbered
-2. List
+        <a class="navbar-brand bg-info text-white p-2" href="index.html">Latitude</a>
 
-**Bold** and _Italic_ and `Code` text
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 
-[Link](url) and ![Image](src)
-```
+        <span class="navbar-toggler-icon"></span>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        </button>
 
-### Jekyll Themes
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plots</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="latvsmaxtemp.html">Max Temperature</a>
+                        <a class="dropdown-item" href="latvshum.html">Humidity</a>
+                        <a class="dropdown-item" href="latvscloud.html">Cloudiness</a>
+                        <a class="dropdown-item" href="latvswind.html">Wind Speed</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="comparisons.html">Comparison</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+            </ul>
+        </div>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KMcLaurin12/Web-Design-Challenge/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    </nav>
 
-### Support or Contact
+    <!-- main content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-7 mt-5">
+                <div class="card">
+                    <h4 class="card-header text-info">Summary: Latitude vs. X</h4>
+                    <div class="card-body">
+                        <img id="img-wrap" class="img-fluid img-center" src="assets/images/Fig1.png" Title="Lat vs Temp" width="400">
+                        <p class="card-text font-weight-light">In this project, we are supposed to visualize the weather of 500+ cities across the world of varying distance from the equator by utilizing the CitiPy library and the OpenWeatherMap API.</p>
+                        <p class="card-text font-weight-light">After creating the dataset, Matplotlib was used to plot latitude against various factors such as max temperatures, wind speed, humidity and cloudiness in order to find possible correlations. This site provides the data used and
+                            the visualizations created, along with an explanation of trends or correlations.</p>
+                    </div>
+                </div>
+            </div>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+            <div class="col-md-12 col-lg-5 mt-5">
+                <div class="card">
+                    <h4 class="card-header text-info">Visualizations</h4>
+                    <div class="card-body">
+
+                        <div class="row pb-3">
+                            <div class="col-md-6">
+                                <a href="latvsmaxtemp.html"><img class="img-fluid img-center viz-box" src="assets/images/Fig1.png" title="Lat vs. Max Temp" width="400"></a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="latvshum.html"><img class="img-fluid img-center viz-box" src="assets/images/Fig2.png" title="Lat vs. Humidity" width="400"></a>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-md-6">
+                                <a href="latvscloud.html"><img class="img-fluid img-center viz-box" src="assets/images/Fig3.png" title="Lat vs. Cloudiness" width="400"></a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="latvswind.html"><img class="img-fluid img-center viz-box" src="assets/images/Fig4.png" title="Lat vs. Wind Speed" width="400"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap javascript tags -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+</body>
+
+</html>
